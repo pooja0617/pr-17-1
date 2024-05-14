@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+
+    <script>
+        function tax() {
+            Salary = parseFloat(document.getElementById("basicSalary").value);
+            tax = 0;
+
+            if (Salary > 2000000) {
+                tax = (Salary - 2000000) * 0.3 + 300000;
+            } else if (Salary > 1800000) {
+                tax = (Salary - 1800000) * 0.2 + 190000;
+            } else if (Salary > 1500000) {
+                tax = (Salary - 1500000) * 0.15 + 160000;
+            } else if (Salary > 600000) {
+                tax = (Salary - 600000) * 0.1 + 60000;
+            }
+
+            alert("Your payable tax is: Rs." + tax.toFixed(2));
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <h2 style="color: rgb(129, 5, 89);">Income Tax Calculator</h2>
+    <h2 style="color: rgb(129, 5, 89);">Enter Basic Salary:<input type="number" id="basicSalary"
+            style="color: rgb(129, 5, 89); font-size: 18px; border-color: blue;" placeholder="Enter Basic Salary" />
+    </h2>
+    <input type="button" style="color: rgb(129, 5, 89); font-size: 18px; border-color: blue;" id="basicSalary"
+        value="Calculate Tax" onclick="tax()" />
+</body>
+
+</html>
